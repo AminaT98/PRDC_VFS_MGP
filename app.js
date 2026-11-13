@@ -170,7 +170,7 @@ async function loadWorkbook(){
   render();
   const counts=CATEGORIES.map(c=>records.filter(r=>r.category===c).length);
   status.className="load-status success";
-  status.textContent="Données MGP chargées : "+records.length+" enregistrement(s). Répartition : "+CATEGORIES.map((c,i)=>c+" ("+counts[i]+")").join(" · ")+". Remplacez le fichier Excel pour actualiser les données.";
+  status.textContent="Données MGP chargées : "+records.length+" enregistrement(s).";
  }catch(e){status.className="load-status error";status.textContent="Impossible de charger les données MGP : "+(e.message||"erreur de lecture du fichier Excel");}
 }
 document.querySelectorAll(".category-btn").forEach(b=>b.addEventListener("click",()=>{
