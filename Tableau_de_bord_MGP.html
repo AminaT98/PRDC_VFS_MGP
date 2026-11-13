@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tableau de bord MGP · PRDC-VFS</title>
+<link href="https://unpkg.com/maplibre-gl@5.6.1/dist/maplibre-gl.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="head">
+ <div class="brand"><div class="brandtext"><div class="eyebrow">Suivi et gestion des données · PRDC-VFS</div><h1 class="title">Mécanisme de gestion des plaintes (MGP)</h1><p class="subtitle">Comités de gestion · Réclamations et traitement · Appréciation communautaire</p></div></div>
+ <div><div class="logos">
+  <div class="logo-slot" title="Logo du projet"><img alt="Logo du projet" src="logo-projet.png" onerror="this.parentElement.style.display='none'"></div>
+  <div class="logo-slot" title="Logo de la Banque mondiale"><img alt="Logo Banque mondiale" src="logo-banque.png" onerror="this.parentElement.style.display='none'"></div>
+  <div class="logo-slot" title="Logo de l’État mauritanien"><img alt="Logo de l’État mauritanien" src="logo-rim.png" onerror="this.parentElement.style.display='none'"></div>
+ </div></div>
+</div></header>
+<main>
+<section class="toolbar">
+ <div class="filters">
+  <input id="search" placeholder="Rechercher un comité, une réclamation, un lieu…">
+  <select id="wilaya"><option value="">Toutes les wilayas</option></select>
+  <select id="type"><option value="">Tous les types de réclamation</option></select>
+ </div>
+ <div class="categorybar">
+  <div class="category-caption">FILTRER PAR VOLET DU MÉCANISME DE GESTION DES PLAINTES</div>
+  <div id="category-buttons" class="category-buttons">
+   <button type="button" class="category-btn active" data-category="all" aria-pressed="true">Tous les volets</button>
+   <button type="button" class="category-btn" data-category="Comités de gestion des plaintes" aria-pressed="false">Comités de gestion des plaintes</button>
+   <button type="button" class="category-btn" data-category="Réclamations enregistrées et traitement" aria-pressed="false">Réclamations enregistrées et traitement</button>
+   <button type="button" class="category-btn" data-category="Appréciation communautaire du mécanisme" aria-pressed="false">Appréciation communautaire du mécanisme</button>
+  </div>
+  <p class="folder-help">Sélectionnez un volet pour consulter les données correspondantes. Les enregistrements sont filtrés selon le volet renseigné dans le formulaire MGP.</p>
+ </div>
+ <div id="load-status" class="load-status" role="status" aria-live="polite">Chargement du fichier Excel MGP…</div>
+</section>
+<section class="stats" id="stats"></section>
+<section class="layout">
+ <div class="panel"><div class="panelhead"><h2 class="paneltitle">Carte géographique des mécanismes</h2><span class="muted" id="map-count"></span></div><div id="map"></div><div class="mapfoot">Fond cartographique : OpenFreeMap · © OpenMapTiles · © OpenStreetMap. Chaque point représente un enregistrement MGP géolocalisé. Une connexion Internet est nécessaire pour afficher le fond de carte.</div></div>
+ <div class="panel"><div class="panelhead"><h2 class="paneltitle" id="detail-title">Fiche du mécanisme de gestion des plaintes</h2><span class="muted" id="detail-status">Sélectionnez un point sur la carte</span></div><div class="details" id="details"><div class="empty">Cliquez sur un point de la carte pour consulter les informations du comité, de la réclamation ou de l’appréciation communautaire.</div></div></div>
+</section>
+</main>
+<footer>PRDC-VFS · Tableau de bord du mécanisme de gestion des plaintes. Le fichier Excel MGP du même dossier est chargé automatiquement via le lanceur.</footer>
+<script src="https://unpkg.com/maplibre-gl@5.6.1/dist/maplibre-gl.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="app.js"></script>
+</body></html>

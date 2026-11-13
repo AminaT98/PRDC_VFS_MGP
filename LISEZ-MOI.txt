@@ -1,0 +1,23 @@
+TABLEAU DE BORD MGP – PRDC-VFS
+
+CONTENU
+- Tableau_de_bord_MGP.html : interface du tableau de bord
+- app.js : traitement et affichage des données
+- styles.css : mise en forme responsive
+- Gestion_des_plaintes_MGP.xlsx : base Excel utilisée par le tableau de bord
+- Ouvrir_Tableau_MGP.bat : lanceur Windows
+
+UTILISATION
+1. Décompressez tout le dossier.
+2. Gardez le fichier Excel dans le même dossier que le HTML et les fichiers JS/CSS.
+3. Double-cliquez sur Ouvrir_Tableau_MGP.bat.
+4. Le tableau de bord s'ouvre dans votre navigateur.
+
+Pour actualiser les données, remplacez Gestion_des_plaintes_MGP.xlsx par le nouvel export en conservant exactement ce nom, puis actualisez la page.
+
+IMPORTANT
+- Une connexion Internet est nécessaire pour charger les bibliothèques cartographiques, le fond de carte et les bibliothèques Excel.
+- Le navigateur bloque la lecture automatique d'un fichier Excel local lorsque le HTML est ouvert directement par double-clic. Utilisez le lanceur BAT.
+- Le classeur fourni contient 13 enregistrements : 12 pour « Comités de gestion des plaintes », 1 pour « Réclamations enregistrées et traitement » et aucun pour « Appréciation communautaire du mécanisme » à la date de cet export. Le bouton du troisième volet est néanmoins présent et affichera les données dès qu'elles seront renseignées dans un prochain export.
+- Aucun onglet/photo associé n'a été fourni dans ce classeur ; la fiche détail affiche les réponses du formulaire.
+- Les logos du projet, de la Banque mondiale et de l'État ne sont pas inclus dans les fichiers fournis. Si vous disposez de ces images, placez logo-projet.png, logo-banque.png et logo-rim.png dans ce dossier ; les emplacements s'afficheront automatiquement.
